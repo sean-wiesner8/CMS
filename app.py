@@ -38,9 +38,9 @@ def create_course():
     body = json.loads(request.data)
     code = body.get("code")
     name = body.get("name")
-    if code is None:
+    if code is None or type(code) != str:
         return failure_response('Need to enter a code', 400)
-    if name is None:
+    if name is None or type(name) != str:
         return failure_response('Need to enter a name', 400)
     new_course = Course(code=body.get("code"), name=body.get("name"))
     db.session.add(new_course)
@@ -68,9 +68,9 @@ def create_user():
     body = json.loads(request.data)
     name = body.get("name")
     netid = body.get("netid")
-    if name is None:
+    if name is None or type(name)!= str:
         return failure_response('Need to enter a name', 400)
-    if netid is None:
+    if netid is None or type(netid) != str:
         return failure_response('Need to enter a netid', 400)
     new_user = User(name=body.get("name"), netid=body.get("netid"))
     db.session.add(new_user)
