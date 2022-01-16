@@ -5,7 +5,7 @@ app.py contains all routes. db.py contains SQLite database, implemented with SQL
 
 The database contains five tables: "course", "user", "assignment", "tstudents", and "tinstructors". The last two tables are both join tables between "course" and "user". For each course, the "course" table stores an id, code, name, list of assignments, list of instructors, and list of students. For each user, the "user" table stores an id, name, netid, instructor courses, and student courses. Columns for both instructor courses and student courses are necessary as a user could be both an instructor and student. For each assignment, the "assignment" table stores an id, title, due date, and course id. There is a one-to-many relationship between "course" and "assignment" and two many-to-many relationships between "course" and "user", the first relating courses with instructors and the second relating courses with students. instructor and student columns in "course" table are serialized users without course field and courses column in "user" table is serialized without users to avoid redundancy and recursion.
 
-## 8 routes implemented:
+## Routes
 
 GET /api/courses/
 Sucess response returns a list of all courses, serialized with all columns.
