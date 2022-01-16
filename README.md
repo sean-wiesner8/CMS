@@ -1,5 +1,5 @@
 # CMS
-Backend routes and database for an abstract theoretical app for organizing and providing course information that relates courses, users, and assignments.
+Backend routes and database for an abstract theoretical app for organizing and providing course information that relates courses, users, and assignments. The primary purpose of this app is to experiment with many-to-many relationships.
 
 app.py contains all routes. db.py contains SQLite database, implemented with SQLAlchemy, with classes "Course", "User", and "Assignment".
 
